@@ -1,25 +1,54 @@
-import React from 'react'
-import {
- IconButton, Box, useColorMode, Icon
-  } from "@chakra-ui/react";
-  import { FaMoon, FaSun } from "react-icons/fa";
-  import { BsSearch } from "react-icons/bs";
-  
-const Sample = () => {
-    const { toggleColorMode, colorMode } = useColorMode();
+// import { useState } from 'react';
+// import Sample from './Pages/Sample';
+// import { Box, Container, Select, VStack, Text, Menu, MenuButton, MenuList, MenuItem, Button, IconButton} from '@chakra-ui/react';
+// import Theme from './Components/Theme'
+// import { VscChevronDown } from "react-icons/vsc";
 
-  return (
-    <Box>
-        <IconButton
-        aria-label="toggle theme"
-        rounded="full"
-        size="xs"
-        onClick={toggleColorMode} icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
-      />
-      <Icon as={BsSearch}  icon={colorMode === "dark" ? 'purple' :  'white'}/>
-    </Box>
+
+// // const fontstyle = ['serif','sans-serif','monospace'];
+// function App() { 
+//   const fontOptions = [
+//     'Serif', 'Sans-serif', 'Monospace'
+//   ];
+//   const [selectedFont, setSelectedFont] = useState(fontOptions[0]);
+
+//   const handleFontChange = (event) => {
+//     setSelectedFont(event.target.value);
+//   }; 
+//   return (
+//     <Box>
+//       Asante
+// <Container maxW="container.md" centerContent>
+//         <VStack spacing={8} marginTop={8}>
+          
+//           <Select
+//             value={selectedFont}
+//             onChange={handleFontChange}
+//             width="100px"
+//             variant="none"
+//           >
+//             {fontOptions.map((font, index) => (
+//               <option width="100px" key={index} value={font}>
+//                 {font}
+//               </option>
+//             ))}
+//           </Select>
+//           {selectedFont && (
+//             <Text fontSize="xl" fontFamily={selectedFont} marginTop={4}>
+//               This text is styled with the selected font.
+//             </Text>
+//           )}
+//         </VStack>
+//       </Container>
+//       {/* <Sample/> */}
+//     </Box>
+//   )
+// }
+
+
     
-  )
-}
 
-export default Sample
+
+
+
+// export default App

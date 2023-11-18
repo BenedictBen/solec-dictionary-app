@@ -1,47 +1,29 @@
-import { useState } from 'react';
-import Sample from './Pages/Sample';
-import { Box, Container, Select, VStack, Text, Menu, MenuButton, MenuList, MenuItem, Button, IconButton} from '@chakra-ui/react';
-import Theme from './Components/Theme'
-import { VscChevronDown } from "react-icons/vsc";
+import React,{ useState } from 'react';
+import { Box, CSSReset} from '@chakra-ui/react';
+import Navbar from './Layouts/Navbar';
+import Search from './Layouts/Search';
+
 
 
 // const fontstyle = ['serif','sans-serif','monospace'];
 function App() { 
-  const fontOptions = [
-    'serif', 'sans-serif', 'monospace'
-  ];
-  const [selectedFont, setSelectedFont] = useState(fontOptions[0]);
+  const [fontStyles] = useState(['Serif','Sans-serif','Monospace']);
+  const [selectedFont, setSelectedFont] = useState(fontStyles[0]);
 
-  const handleFontChange = (event) => {
-    setSelectedFont(event.target.value);
-  }; 
+  const handleFontChange = (font) => {
+    setSelectedFont(font);
+};
+
   return (
-    <Box>
-      Asante
-<Container maxW="container.md" centerContent>
-        <VStack spacing={8} marginTop={8}>
-          
-          <Select
-            value={selectedFont}
-            onChange={handleFontChange}
-            width="100px"
-            variant="none"
-          >
-            {fontOptions.map((font, index) => (
-              <option width="100px" key={index} value={font}>
-                {font}
-              </option>
-            ))}
-          </Select>
-          {selectedFont && (
-            <Text fontSize="xl" fontFamily={selectedFont} marginTop={4}>
-              This text is styled with the selected font.
-            </Text>
-          )}
-        </VStack>
-      </Container>
-      {/* <Sample/> */}
+  
+    <Box >
+      <CSSReset/>
+    <Navbar onFontChange={handleFontChange}/>
+    <Search selectedFont={selectedFont} onFontChange={setSelectedFont}/>
+    
     </Box>
+    
+    
   )
 }
 
